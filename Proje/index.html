@@ -218,6 +218,21 @@
     </div>
 </footer>
 <style>
+            @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px); /* Hafif aşağıdan yukarı hareket */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0); /* Normal konuma gelir */
+            }
+        }
+
+        .fade-in {
+            opacity: 0; /* Başlangıçta görünmez */
+            animation: fadeIn 1s ease-out forwards; /* Animasyon 1 saniye sürer */
+        }
     body {
         font-family: 'Roboto', sans-serif;
         margin: 0;
@@ -973,5 +988,23 @@
     margin: 20px 0; /* Üst ve alt boşluk */
 }
 </style>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const containers = document.querySelectorAll("section, header, footer, .service-card"); // Hangi elementlere efekt uygulanacaksa seçin
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("fade-in");
+                    observer.unobserve(entry.target); // Görünen öğeyi gözlemlemeyi bırak
+                }
+            });
+        }, { threshold: 0.1 }); // %10'u görünür olduğunda tetiklenir
+
+        containers.forEach((container) => {
+            observer.observe(container);
+        });
+    });
+</script>
 </body>
 </html>
