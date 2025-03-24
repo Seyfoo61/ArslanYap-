@@ -4,42 +4,69 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
         <style>
+                    @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards; 
+        }
             body {
                 font-family: 'Roboto', sans-serif;
                 margin: 0;
                 padding: 0;
                 background-color: #ffffff;
             }
-            .header {
-                background-color: #1e3a5f;
-                color: white;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 20px 40px;
-            }
-            .logo {
-                height: 100px;
-                transform: scale(3);
-                margin-left: 50px;
-                width: auto;
-                margin-right: 15px;
-            }
-            .header-left {
-                display: flex;
-                align-items: center;
-            }
-            nav {
-                display: flex;
-                gap: 50px;
-            }
-            nav a {
-                color: white;
-                text-decoration: none;
-                font-weight: 1000;
-                font-size: 1.3rem;
-                transition: color 0.3s ease;
-            }
+            header {
+        background-color: #1e3a5f;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0; 
+        z-index: 1000; 
+    }
+    .logo {
+    height: 80px;
+    transform: scale(3);
+    margin-left: 50px;
+    width: auto;
+    margin-right: 15px;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+}
+nav {
+        display: flex;
+    gap: 20px;
+    background-color: #1e3a5f;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    }
+    nav a {
+        color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+    nav a:hover {
+        color: black;
+    }
             .title {
                 background-image: url('images/mutfakbanyo.png');
                 background-size: cover;
@@ -79,13 +106,56 @@
                 margin-left: 150px;
                 margin-right: 150px;
             }
-            footer {
-                background-color: #1c1c1c;
-                color: white;
-                padding: 20px;
-                text-align: center;
-                font-size: 0.8rem;
-            }
+            .footer {
+    background-color: #ffffff;
+    color: #333;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    position: relative;
+}
+.footer-top {
+    background-color: #e0e0e0;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.footer-content {
+    padding-top: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.footer-info {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+.footer-info a {
+    color: #1e3a5f;
+    text-decoration: none;
+    font-weight: bold;
+}
+.footer-info a:hover {
+    text-decoration: underline;
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+.social-links img {
+    transition: transform 0.3s ease;
+}
+.social-links img:hover {
+    transform: scale(1.2);
+}
+.footer-note {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 5px;
+}
             .contact {
         padding: 20px 20px;
         text-align: center;
@@ -133,17 +203,17 @@
         </style>
     </head>
     <body>
-        <div class="header">
+        <header>
             <div class="header-left">
                 <img src="../images/logo.svg" alt="Arslan Yapı Logo" class="logo">
             </div>
-            <nav>
-                <a href="#home">Ana Sayfa</a>
-                <a href="#services">Hizmetler</a>
-                <a href="#about">Hakkımızda</a>
-                <a href="#contact">İletişim</a>
-            </nav>
-        </div>
+        <nav>
+            <a href="#home">Ana Sayfa</a>
+            <a href="#services">Hizmetler</a>
+            <a href="#about">Hakkımızda</a>
+            <a href="#contact">İletişim</a>
+        </nav>
+        </header>
         <div class="title">
             <h2>Mutfak & Banyo Yenileme</h2>
         </div>
@@ -192,18 +262,44 @@
                 diam.
             </p>
         </div>
-        <section id="contact" class="contact">
-            <h2>Bizimle İletişime Geçin</h2>
-            <p class="contact-info">
-                Adres: Tokatköy Mah. Sultan aziz Cad. No:68 İstanbul/Beykoz <br>
-                Telefon: <a href="tel:05352713431">0535 271 34 31</a> <br>
-                E-posta: <a href="mailto:arslanyapı@gmail.com">arslanyapı@gmail.com</a><br>
-                <p>Arslan Pen © 2025 | Tüm haklarımız saklıdır.</p>
-            </p>
-            <div class="contact-buttons">
-                <a href="https://wa.me/05352713431" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="" width="67" height="67"></a>
-                <a href="tel:05352713431"><img src="https://cdn-icons-png.flaticon.com/128/9946/9946341.png" alt="" width="57" height="57"></a>
+        <footer class="footer">
+            <div class="footer-top"></div>
+            <div class="footer-content">
+                <p class="footer-info">
+                    <strong>Adres:</strong> Tokatköy Mah. Sultan Aziz Cad. No:68 İstanbul/Beykoz <br>
+                    <strong>Telefon:</strong> <a href="tel:05352713431">0535 271 34 31</a> <br>
+                    <strong>E-posta:</strong> <a href="mailto:arslanyapı@gmail.com">arslanyapı@gmail.com</a>
+                </p>
+                <div class="social-links">
+                    <a href="https://wa.me/05352713431" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" alt="WhatsApp" width="30">
+                    </a>
+                    <a href="tel:05352713431">
+                        <img src="https://cdn-icons-png.flaticon.com/128/9946/9946341.png" alt="Telefon" width="30">
+                    </a>
+                    <a href="mailto:arslanyapı@gmail.com">
+                        <img src="https://cdn-icons-png.flaticon.com/128/732/732200.png" alt="E-posta" width="30">
+                    </a>
+                </div>
+                <p class="footer-note">Arslan Pen © 2025 | Tüm hakları saklıdır.</p>
             </div>
-        </section>
+        </footer>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const containers = document.querySelectorAll("section, header, footer, .service-card");
+    
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("fade-in");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                containers.forEach((container) => {
+                    observer.observe(container);
+                });
+            });
+        </script>
     </body>
 </html>
