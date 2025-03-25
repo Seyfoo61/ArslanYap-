@@ -274,67 +274,95 @@ nav {
     transform: scale(1.3);
     z-index: 3;
 }
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .image-gallery {
+        grid-template-columns: 1fr;
+    }
+}
         </style>
     </head>
     <body>
         <header>
             <div class="header-left">
-                <img src="../images/logo.svg" alt="Arslan Yapı Logo" class="logo">
+                <img src="../../images/logo.svg" alt="Arslan Yapı Logo" class="logo">
             </div>
         <nav>
-            <a href="#home">Ana Sayfa</a>
-            <a href="#services">Hizmetler</a>
-            <a href="#about">Hakkımızda</a>
-            <a href="#contact">İletişim</a>
+            <a href="../../index.html#home">Ana Sayfa</a>
+            <a href="../../index.html#services">Hizmetler</a>
+            <a href="../../index.html#about">Hakkımızda</a>
+            <a href="#footer">İletişim</a>
         </nav>
         </header>
         <div class="title">
-            <h2>Mutfak & Banyo Yenileme</h2>
+            <h2>Dış Cephe Kaplama & Boya İşleri</h2>
         </div>
         <div class="content">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a bibendum purus, in vestibulum eros. Morbi porta 
-                luctus dignissim. Praesent iaculis aliquet ligula in tempor. Nam sit amet porta magna. Morbi gravida erat vel 
-                gravida dignissim. Vestibulum fermentum dictum massa, eget pharetra lectus mollis non. Maecenas sed orci vitae 
-                ipsum tempus ornare euismod dapibus nunc. Pellentesque auctor magna sed leo porttitor, sed maximus lectus varius. 
-                Fusce diam purus, viverra ut lectus sed, volutpat posuere mi. Vivamus id vehicula purus. Praesent eu leo vel neque 
-                tempor rhoncus. Praesent molestie sodales vulputate. Vivamus iaculis ante nec dictum pulvinar. Vivamus eu laoreet 
-                mauris. Donec eu ex in diam imperdiet imperdiet vitae nec quam. Ut semper varius volutpat.
-            </p>
-            <p>
-                Sed consectetur at quam a placerat. Maecenas ut consequat augue. Fusce condimentum dapibus molestie. Nunc mi dui, 
-                pellentesque id felis vitae, tempor posuere sem. Praesent dolor nulla, pulvinar sit amet nisi nec, venenatis 
-                fermentum neque. Sed auctor eleifend libero, vitae mattis leo. Sed rhoncus leo nisi, ut vulputate lacus pharetra 
-                vel. Etiam tortor libero, pulvinar quis justo a, vehicula molestie urna. Phasellus lectus nunc, luctus nec 
-                tincidunt a, commodo quis leo. Mauris venenatis magna eget euismod posuere. Class aptent taciti sociosqu ad litora 
-                torquent per conubia nostra, per inceptos himenaeos. Donec eu felis egestas, maximus tellus ac, volutpat sem. 
-                Suspendisse mollis iaculis rhoncus. Duis eu vehicula eros, nec luctus justo.
-            </p>
-            <p>
-                Nullam faucibus elit elit, ac semper massa pharetra eu. Mauris convallis sem sit amet erat pretium mollis. Morbi 
-                ac nulla a risus ornare maximus eu ultrices augue. Donec varius lacus volutpat pretium viverra. Duis at maximus 
-                lacus, ut consectetur nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                 Maecenas id diam turpis. Mauris a sodales massa. Nulla ornare imperdiet bibendum. Vestibulum accumsan faucibus 
-                 turpis, at pharetra tortor fringilla non. Aliquam erat volutpat. Fusce aliquet metus id sapien auctor porttitor.
-            </p>
-            <p>
-                Integer gravida dictum erat, quis pretium nunc venenatis non. Sed congue placerat tortor. Maecenas molestie 
-                fermentum aliquam. Suspendisse id imperdiet magna, ut lobortis nisl. Proin vel pellentesque risus, id finibus 
-                magna. Suspendisse rutrum pulvinar dui et gravida. Vestibulum dictum massa erat, nec rhoncus nisl efficitur vitae.
-                 Sed ut blandit tortor. Fusce venenatis a nisl venenatis vulputate. Sed non interdum nibh, id gravida ipsum. 
-                 Cras hendrerit eleifend enim, quis vulputate arcu congue ac. Pellentesque habitant morbi tristique senectus et 
-                 netus et malesuada fames ac turpis egestas. Morbi id nunc finibus odio ultrices accumsan sit amet vel leo. Morbi
-                  malesuada laoreet lorem quis dictum. Donec sit amet dui condimentum, consectetur magna non, ultricies quam.
-            </p>
-            <p>
-                Etiam elementum risus mi, rutrum cursus eros maximus id. Aenean eu tempor dolor, molestie mattis est. Nam aliquet 
-                molestie libero, in imperdiet lorem. In arcu massa, consectetur nec lacinia eget, placerat at tellus. Praesent 
-                lacus erat, semper vitae turpis ut, commodo imperdiet nunc. Nunc et quam turpis. Nam rutrum eros ligula, euismod 
-                viverra purus aliquet fermentum. Suspendisse id sagittis purus, non commodo enim. Fusce egestas ligula sit amet 
-                purus viverra, ac congue velit pretium. Mauris sed purus in purus ullamcorper malesuada. Nulla facilisi. Ut 
-                elementum pulvinar lorem, ut bibendum justo blandit ac. Integer iaculis condimentum viverra. Maecenas quis nulla 
-                diam.
-            </p>
+            <div class="hizmet-sablonu">
+                <h2>Dış Cephe Kaplama & Boya İşleri</h2>
+                
+                <p>Binalarınıza estetik bir görünüm kazandırırken aynı zamanda koruma sağlayan profesyonel dış cephe kaplama ve boya çözümleri sunuyoruz. Yüksek kaliteli malzemeler ve uzman işçilikle binalarınızın ömrünü uzatıyor, değerini artırıyoruz.</p>
+              
+                <h3>Neden Dış Cephe Kaplama & Boya?</h3>
+                
+                <p><strong>Mimari Estetik:</strong> Binalarınıza modern ve şık bir görünüm kazandırıyoruz</p>
+                
+                <p><strong>Hava Koşullarına Dayanıklılık:</strong> Yağmur, kar, güneş gibi dış etkenlere karşı koruma</p>
+                
+                <p><strong>Isı Yalıtımı:</strong> Enerji tasarrufu sağlayan termal kaplama sistemleri</p>
+                
+                <p><strong>Uzun Ömürlü Çözümler:</strong> Yıpranmaya karşı dirençli malzemelerle kalıcı sonuçlar</p>
+              
+                <h3>Hizmetlerimiz</h3>
+                
+                <p><strong>Silikonlu Dış Cephe Boyaları:</strong> Uzun ömürlü ve solmayan boyalarla yenileme</p>
+                
+                <p><strong>Mantolama Sistemleri:</strong> Isı yalıtımlı dış cephe kaplamaları</p>
+                
+                <p><strong>Alüminyum Kompozit Kaplama:</strong> Modern ve hafif cephe çözümleri</p>
+                
+                <p><strong>Ahşap Görünümlü Kaplamalar:</strong> Doğal ahşap dokusunda dayanıklı malzemeler</p>
+                
+                <p><strong>Tamir ve Yenileme İşleri:</strong> Eski ve hasarlı cephelerin onarımı</p>
+              
+                <h3>Çalışma Sürecimiz</h3>
+                
+                <p><strong>1. Ücretsiz Keşif ve Projelendirme:</strong> Binanızı inceliyor, ihtiyaçlarınızı analiz ediyoruz</p>
+                
+                <p><strong>2. Yüzey Hazırlığı:</strong> Cephenin profesyonel şekilde temizlenmesi ve hazırlanması</p>
+                
+                <p><strong>3. Uygulama:</strong> Uzman ekiplerimizle titiz çalışma</p>
+                
+                <p><strong>4. Son Kontrol ve Teslim:</strong> Detaylı inceleme sonrası mükemmel sonuç</p>
+              
+                <h3>Neden Bizi Tercih Etmelisiniz?</h3>
+                
+                <p><strong>20+ Yıllık Uzmanlık:</strong> Sektördeki tecrübemizle en zorlu projeleri bile sorunsuz tamamlıyoruz</p>
+                
+                <p><strong>Kaliteli Malzemeler:</strong> Yalnızca sertifikalı ve dayanıklı ürünler kullanıyoruz</p>
+                
+                <p><strong>Uygun Fiyat ve Garanti:</strong> En ekonomik çözümleri sunarken, işçilik garantisi veriyoruz</p>
+                
+                <p><strong>Zamanında Teslim:</strong> Projelerinizi belirlenen sürede tamamlıyoruz</p>
+              
+                <div class="cta">
+                  <p><strong>Binanızı yenilemek ve değerini artırmak için hemen iletişime geçin!</strong></p>
+                  <p>Uzman ekibimizle size özel çözümler sunmaktan mutluluk duyacağız</p>
+                </div>
+              </div>
             <div class="image-gallery">
                 <div class="image-wrapper">
                     <img src="photo1.jpg" alt="Photo 1">
@@ -353,7 +381,7 @@ nav {
                 </div>
             </div>
         </div>
-        <footer class="footer">
+        <footer id="footer" class="footer">
             <div class="footer-top"></div>
             <div class="footer-content">
                 <p class="footer-info">
@@ -377,7 +405,7 @@ nav {
         </footer>
         <script>
             document.addEventListener("DOMContentLoaded", () => {
-                const containers = document.querySelectorAll("section, footer, .service-card"); // Header kaldırıldı
+                const containers = document.querySelectorAll("section, footer, .service-card");
 
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach((entry) => {
