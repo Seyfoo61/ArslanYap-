@@ -368,7 +368,7 @@
 
     .services .service-cards {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Kartların genişliği minimum 250px, maksimum 1fr */
+        grid-template-columns: repeat(4, 1fr);
         gap: 30px; /* Kartlar arasındaki boşluk */
         margin: 0 auto; /* Ortalamak için */
         max-width: 1400px; /* Kartların toplam genişliğini sınırlamak için */
@@ -700,6 +700,174 @@ social-links img {
     margin: 20px 0; /* Üst ve alt boşluk */
 }
 /* Varsayılan (desktop) tasarım */
+        /* Mobil cihazlar için düzenleme */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Yazı boyutunu küçült */
+    }
+
+    header {
+        flex-direction: column; /* Header içeriğini dikey hizala */
+        text-align: center;
+    }
+
+    .logo {
+        height: 60px; /* Logo boyutunu küçült */
+        transform: scale(2); /* Logo ölçeğini küçült */
+        margin: 0 auto; /* Ortala */
+    }
+
+    nav {
+        flex-direction: column; /* Menü öğelerini dikey hizala */
+        gap: 10px; /* Menü öğeleri arasındaki boşluk */
+        padding: 10px 0;
+    }
+
+    .hero-section {
+        height: auto; /* Yüksekliği otomatik yap */
+        padding: 20px; /* Kenar boşluklarını artır */
+    }
+
+    .hero-section h1 {
+        font-size: 2rem; /* Başlık boyutunu küçült */
+    }
+
+    .hero-section p {
+        font-size: 1rem; /* Paragraf boyutunu küçült */
+    }
+
+    .services .service-cards {
+        grid-template-columns: 1fr; /* Kartları tek sütun yap */
+        gap: 20px; /* Kartlar arasındaki boşluk */
+    }
+
+    .service-card {
+        padding: 15px; /* Kart içindeki boşlukları azalt */
+    }
+
+    .about-container {
+        flex-direction: column; /* Hakkımızda içeriğini dikey hizala */
+        gap: 20px; /* Görsel ve metin arasındaki boşluk */
+    }
+
+    .about-images {
+        margin-top: 0; /* Görsel üst boşluğunu kaldır */
+    }
+
+    .statistics-container {
+        flex-direction: column; /* İstatistikleri dikey hizala */
+        gap: 20px; /* İstatistikler arasındaki boşluk */
+    }
+
+    .contact-buttons {
+        flex-direction: row; /* İkonları yatay hizala */
+        justify-content: center; /* Ortala */
+        gap: 15px; /* İkonlar arasındaki boşluk */
+    }
+
+    footer {
+        font-size: 0.8rem; /* Footer yazı boyutunu küçült */
+        padding: 10px; /* Kenar boşluklarını azalt */
+    }
+
+    .social-links {
+        gap: 10px; /* Sosyal medya ikonları arasındaki boşluk */
+    }
+}
+
+/* Tablet cihazlar için düzenleme */
+@media (max-width: 1024px) {
+    body {
+        font-size: 15px; /* Yazı boyutunu biraz küçült */
+    }
+
+    header {
+        flex-direction: column; /* Header içeriğini dikey hizala */
+        text-align: center;
+        padding: 15px 20px; /* Kenar boşluklarını azalt */
+    }
+
+    .logo {
+        height: 70px; /* Logo boyutunu küçült */
+        transform: scale(2.5); /* Logo ölçeğini küçült */
+        margin: 0 auto; /* Ortala */
+    }
+
+    nav {
+        flex-direction: column; /* Menü öğelerini dikey hizala */
+        gap: 15px; /* Menü öğeleri arasındaki boşluk */
+        padding: 10px 0;
+    }
+
+    .hero-section {
+        height: auto; /* Yüksekliği otomatik yap */
+        padding: 20px; /* Kenar boşluklarını artır */
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem; /* Başlık boyutunu küçült */
+    }
+
+    .hero-section p {
+        font-size: 1rem; /* Paragraf boyutunu küçült */
+    }
+
+    .services .service-cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Kartları daha küçük yap */
+        gap: 20px; /* Kartlar arasındaki boşluk */
+    }
+
+    .service-card {
+        padding: 15px; /* Kart içindeki boşlukları azalt */
+    }
+
+    .about-container {
+        flex-direction: column; /* Hakkımızda içeriğini dikey hizala */
+        gap: 20px; /* Görsel ve metin arasındaki boşluk */
+    }
+
+    .about-images {
+        margin-top: 0; /* Görsel üst boşluğunu kaldır */
+    }
+
+    .statistics-container {
+        flex-direction: column; /* İstatistikleri dikey hizala */
+        gap: 30px; /* İstatistikler arasındaki boşluk */
+    }
+
+    .contact-buttons {
+        flex-direction: row; /* İkonları yatay hizala */
+        justify-content: center; /* Ortala */
+        gap: 15px; /* İkonlar arasındaki boşluk */
+    }
+
+    footer {
+        font-size: 0.9rem; /* Footer yazı boyutunu küçült */
+        padding: 15px; /* Kenar boşluklarını azalt */
+    }
+
+    .social-links {
+        gap: 10px; /* Sosyal medya ikonları arasındaki boşluk */
+    }
+
+    .service-card img {
+        height: auto; /* Görsellerin yüksekliğini otomatik yap */
+    }
+
+    .contact form {
+        max-width: 500px; /* Form genişliğini sınırla */
+        padding: 20px; /* Form içindeki boşlukları azalt */
+    }
+
+    .contact input, .contact textarea {
+        font-size: 1rem; /* Form elemanlarının yazı boyutunu küçült */
+    }
+
+    .contact button {
+        font-size: 1rem; /* Buton yazı boyutunu küçült */
+        padding: 10px; /* Buton içindeki boşlukları azalt */
+    }
+}
         </style>
         <script type="application/ld+json">
 {
@@ -908,7 +1076,7 @@ social-links img {
             </a>
         </div>
         <footer id="footer" class="footer">
-            <div class="footer-top"></div> <!-- Footer üstüne gri şerit -->
+            <div class="footer-top"></div>
             <div class="footer-content">
                 <p class="footer-info">
                     <strong>Adres:</strong> Tokatköy Mah. Sultan Aziz Cad. No:68 İstanbul/Beykoz <br>
@@ -946,10 +1114,10 @@ social-links img {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("fade-in");
-                    observer.unobserve(entry.target); // Görünen öğeyi gözlemlemeyi bırak
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 }); // %10'u görünür olduğunda tetiklenir
+        }, { threshold: 0.1 });
 
         containers.forEach((container) => {
             observer.observe(container);
@@ -958,25 +1126,24 @@ social-links img {
         </script>
         <script>
     document.addEventListener("DOMContentLoaded", () => {
-        // Smooth scroll for navigation links
         const navLinks = document.querySelectorAll("nav a");
 
         navLinks.forEach(link => {
             link.addEventListener("click", (event) => {
-                event.preventDefault(); // Varsayılan tıklama davranışını engelle
-                const targetId = link.getAttribute("href").substring(1); // Hedef ID'yi al (# işaretini kaldır)
+                event.preventDefault();
+                const targetId = link.getAttribute("href").substring(1); 
                 const targetElement = document.getElementById(targetId);
 
                 if (targetElement) {
                     targetElement.scrollIntoView({
-                        behavior: "smooth", // Yumuşak kaydırma
-                        block: "start" // Hedefin üst kısmına kaydır
+                        behavior: "smooth",
+                        block: "start" 
                     });
                 }
             });
         });
 
-        // Fade-in animation for sections
+
         const containers = document.querySelectorAll("section, header, footer, .service-card");
 
         const observer = new IntersectionObserver((entries) => {
