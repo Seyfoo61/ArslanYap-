@@ -31,9 +31,16 @@
             padding: 0px 20px;
             background-color: #1e3a5f;
             color: white;
-            position: sticky;
+            position: fixed; /* Changed from sticky to fixed */
             top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
+        }
+
+        .content {
+            position: relative;
+             /* Height of header in normal view */
         }
 
         .logo { height: 120px; width: auto; }
@@ -225,7 +232,7 @@
             align-items: flex-end;
             gap: 10px;
             z-index: 1004;
-            position:fixed;
+            position: fixed;
         }
 
         .chat-bubble {
@@ -387,8 +394,25 @@
             list-style: none;
             gap: 20px;
             margin: 0;
-            padding: 0;
+            padding: 0 50px;
             z-index: 1001;
+        }
+        .title {
+            background-image: linear-gradient(to bottom, rgba(30, 58, 95, 0.7), rgba(30, 58, 95, 0.9)), 
+                      url('images/mutfakbanyo.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 120px;
+            position: relative;
+            text-align: center; 
+            padding:30px;
+        }
+        .title h2 {
+         font-size: 2rem;
         }
 
         .nav-links a {
@@ -398,83 +422,106 @@
             font-size: 1rem;
             transition: color 0.3s ease;
         }
+        h3 {
+    display: block;
+    font-size: 1.35em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+h2 {
+    display: block;
+    font-size: 1.8em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+p {
+    display: block;
+    margin-block-start: 1.2em;
+    margin-block-end: 1.2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
 
         .nav-links a:hover { color: black; }
 
         .hamburger-menu { display: none; }
 
         @media (max-width: 1024px) {
-            header { position: fixed;
-                width: 100%;
-                
-                z-index: 1000; 
+            header {
+                height: 180px;
             }
-            
-            img.logo { height: 180px; }
-            
-            .hamburger-menu {
-                display: block;
-                position: absolute;
-                right: 75px;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 40px;
-                background: none;
-                border: none;
-                color: white;
-                cursor: pointer;
-                z-index: 1002;
+
+            .content {
+                 /* Match header height */
             }
 
             .nav-links {
-                display: none;
-                position: fixed;
                 top: 180px;
-                left: 0;
-                width: 100%;
-                background-color: #1e3a5f;
-                padding: 0;
-                margin: 0;
-                z-index: 1001;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             }
 
-            .nav-links.active { display: block; }
-
-            .nav-links li {
-                width: 100%;
-                margin: 0;
-                padding: 0;
+            img.logo { 
+                height: 180px; 
             }
 
-            .nav-links a {
-                display: block;
-                width: 100%;
-                padding: 15px 20px;
-                text-align: center;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-                border-top: 1px solid rgba(255,255,255,0.1);
-                font-size:1.4rem;
+            .content-section {
+                padding: 20px;
+                gap: 20px;
             }
 
-            .nav-links a:hover {
-                background-color: rgba(255,255,255,0.1);
-                color: white;
+            /* Zigzag düzenini koru */
+            .content-section:nth-of-type(2) {
+                flex-direction: row; /* Photo 1 solda */
             }
 
-            .services .service-cards { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-            .image-stack img:nth-child(3) {
-        top: 150px;
-        left: -20px;
-        z-index: 1;
-        transform: translate(-10px, 10px);
-    }
+            .content-section:nth-of-type(3) {
+                flex-direction: row-reverse; /* Photo 2 sağda */
+            }
+
+            .content-section:nth-of-type(4) {
+                flex-direction: row; /* Photo 3 solda */
+            }
+
+            .content-section:nth-of-type(5) {
+                flex-direction: row-reverse; /* Photo 4 sağda */
+            }
+
+            .image-side {
+                flex: 0 0 40%;
+            }
+
+            .text-side {
+                flex: 0 0 60%;
+            }
         }
 
         @media (max-width: 768px) {
-            body { font-size: 14px; }
+            header {
+                height: 140px;
+            }
+
+            .content {
+                
+            }
+
+            .nav-links {
+                top: 140px;
+            }
+
+            .logo {
+                height: 100px;
+                padding-top: 20px;
+            }
             
-            .logo { height: 100px; padding-top:20px; }
+            body { font-size: 14px; }
             
             .hero-section h1 { font-size: 3.5rem; }
             
@@ -541,7 +588,134 @@
     transform: scale(1.05);
     z-index: 10; 
 }
+            .content-section {
+                padding: 20px;
+                gap: 20px;
+            }
 
+            .image-side {
+                flex: 0 0 40%;
+            }
+
+            .text-side {
+                flex: 0 0 60%;
+            }
+
+            .section-intro {
+                padding: 40px 20px;
+            }
+
+            .text-side h3 {
+                font-size: 1.2rem;
+            }
+
+            .text-side p {
+                font-size: 0.9rem;
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+            margin-bottom: 40px;
+        }
+
+        .content-section {
+            display: flex;
+            align-items: center;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            gap: 40px;
+        }
+
+        .content-section:nth-of-type(2) {
+            flex-direction: row; /* Photo 1 solda */
+        }
+
+        .content-section:nth-of-type(3) {
+            flex-direction: row-reverse; /* Photo 2 sağda */
+        }
+
+        .content-section:nth-of-type(4) {
+            flex-direction: row; /* Photo 3 solda */
+        }
+
+        .content-section:nth-of-type(5) {
+            flex-direction: row-reverse; /* Photo 4 sağda */
+        }
+
+        .image-side {
+            flex: 0 0 40%;
+        }
+
+        .image-side img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .text-side {
+            flex: 0 0 60%;
+        }
+
+        /* Content sections için yeni stiller */
+        .section-intro {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            display: flex;
+            align-items: center;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            gap: 40px;
+        }
+
+        .image-side {
+            flex: 0 0 40%;
+        }
+
+        .image-side img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-side img:hover {
+            transform: scale(1.05);
+        }
+
+        .text-side {
+            flex: 0 0 60%;
+        }
+
+        /* Mobil görünüm için media query */
+        @media (max-width: 768px) {
+            .content-section {
+                flex-direction: column !important; /* Her zaman dikey düzen */
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .image-side, .text-side {
+                flex: 0 0 100%;
+                width: 100%;
+            }
+
+            .section-intro {
+                padding: 40px 20px;
+            }
         }
     </style>
     <script type="application/ld+json">
@@ -566,7 +740,7 @@
 </head>
 <body>
     <header>
-        <img src="images/logo.svg" alt="Arslan Yapı Logo" class="logo">
+        <img src="../../images/logo.svg" alt="Arslan Yapı Logo" class="logo">
         <nav>
             <button class="hamburger-menu" aria-label="Menüyü Aç/Kapat">☰</button>
             <ul class="nav-links">
@@ -577,166 +751,77 @@
             </ul>
         </nav>
     </header>
-    
-    <section id="home" class="hero-section">
-        <h1>Yaşam Alanlarınızı Baştan Aşağı Yeniliyoruz!</h1>
-        <p>Ev ve iş yerlerinizi modern, konforlu ve estetik hale getirmek için profesyonel çözümler sunuyoruz.</p>
-    </section>
-     
-    <section id="services" class="services">
-        <h2 class="section-title">Öne Çıkan Hizmetlerimiz</h2>
-        <p class="section-description">Ev ve iş yerlerinizi modern dokunuşlarla yeniden tasarlıyor, estetik ve konforu bir araya getirerek hayalinizdeki yaşam alanlarını gerçeğe dönüştürüyoruz.</p>
-        <div class="service-cards">
-            <div class="service-card">
-                <img src="images/5.jpg" alt="Mutfak & Banyo Yenileme">
-                <h3>Mutfak & Banyo Yenileme</h3>
-                <p>Modern mutfaklar ve şık banyolar tasarlıyoruz.</p>
-                <a href="hizmetler/mutfakbanyo/mutfakbanyo.html" class="card-button">Detaylı Bilgi</a>
+    <div class="title">
+        <h2>Alçıpan & Asma Tavan Uygulamaları</h2>
+    </div>
+    <div class="content">
+        <!-- Bölüm 1 - Intro -->
+        <div class="section-intro">
+            <h2>Alçıpan ve Asma Tavan Tasarım & Uygulama Hizmetleri</h2>
+            <p>Mekanlarınıza modern bir karakter kazandıran, işlevsel ve estetik <strong>alçıpan ve asma tavan çözümleri</strong> sunuyoruz. Ofisleriniz, konutlarınız, mağazalarınız veya otelleriniz için özel tasarlanmış sistemlerimizle mekanlarınızı yeniden yorumluyor, ferah ve şık bir atmosfer yaratıyoruz.</p>
+        </div>
+
+        <!-- Bölüm 2 - Neden -->
+        <div class="content-section">
+            <div class="image-side">
+                <img src="photo1.jpg" alt="Alçıpan ve Asma Tavan">
             </div>
-            <div class="service-card">
-                <img src="images/22.jpg" alt="Laminat & Parke Döşeme">
-                <h3>Laminat & Parke Döşeme</h3>
-                <p>Estetik ve dayanıklı zemin çözümleri sunuyoruz.</p>
-                <a href="hizmetler/laminantparke/laminantparke.html" class="card-button">Detaylı Bilgi</a>
-            </div>
-            <div class="service-card">
-                <img src="images/4.jpg" alt="Gergi Tavan & Led Aydınlatma">
-                <h3>Gergi Tavan & Led Aydınlatma</h3>
-                <p>Ortama şıklık katan aydınlatma sistemleri uyguluyoruz.</p>
-                <a href="hizmetler/tavanled/tavanled.html" class="card-button">Detaylı Bilgi</a>
-            </div>
-            <div class="service-card">
-                <img src="images/7.jpg" alt="Kapı & Pencere Değişimi">
-                <h3>Kapı & Pencere Değişimi (PVC, Alüminyum)</h3>
-                <p>Isı ve ses yalıtımı için kaliteli çözümler sunuyoruz.</p>
-                <a href="hizmetler/kapipencere/kapipencere.html" class="card-button">Detaylı Bilgi</a>
-            </div>
-            <div class="service-card">
-                <img src="images/20.jpg" alt="Duvar Kağıdı & Dekoratif Boya">
-                <h3>Duvar Kağıdı & Dekoratif Boya</h3>
-                <p>Evinize veya iş yerinize karakter kazandırıyoruz.</p>
-                <a href="hizmetler/duvarkagidiboya/duvarkagidiboya.html" class="card-button">Detaylı Bilgi</a>
-            </div>
-            <div class="service-card">
-                <img src="images/15.jpg" alt="Ses & Isı Yalıtım Uygulamaları">
-                <h3>Ses & Isı Yalıtım Uygulamaları</h3>
-                <p>Daha konforlu yaşam alanları oluşturuyoruz.</p>
-                <a href="hizmetler/sesisiyalitim/sesisiyalitim.html" class="card-button">Detaylı Bilgi</a>
-            </div>
-            <div class="service-card">
-                <img src="images/5.jpg" alt="Alçıpan & Asma Tavan Uygulamaları">
-                <h3>Alçıpan & Asma Tavan Uygulamaları</h3>
-                <p>Modern tavan tasarımlarıyla şık mekanlar yaratıyoruz.</p>
-                <a href="hizmetler/alcipanasmatavan/alcipanasmatavan.html" class="card-button">Detaylı Bilgi</a>
-            </div>
-            <div class="service-card">
-                <img src="images/1.jpg" alt="Işık Havuzu & Spot Aydınlatma">
-                <h3>Işık Havuzu & Spot Aydınlatma</h3>
-                <p>Dekoratif ve enerji tasarruflu aydınlatma çözümleri.</p>
-                <a href="hizmetler/aydinlatma/aydinlatma.html" class="card-button">Detaylı Bilgi</a>
-            </div>
-            <div class="service-card">
-                <img src="images/3.jpg" alt="Amerikan Kapı ve Ahşap Kaplama">
-                <h3>Amerikan Kapı ve Ahşap Kaplama</h3>
-                <p>Şık ve uzun ömürlü kapılarla mekanlarınıza değer katıyoruz.</p>
-                <a href="hizmetler/amerikankapiahsap/amerikankapiahsap.html" class="card-button">Detaylı Bilgi</a>
-            </div>
-            <div class="service-card">
-                <img src="images/16.jpg" alt="Elektrik Tesisatı">
-                <h3>Elektrik Tesisatı</h3>
-                <p>Güvenli ve profesyonel elektrik altyapı hizmetleri sunuyoruz.</p>
-                <a href="hizmetler/elektriktesisati/elektriktesisati.html" class="card-button">Detaylı Bilgi</a>
-            </div>
-            <div class="service-card">
-                <img src="images/17.jpg" alt="Su Tesisatı">
-                <h3>Su Tesisatı</h3>
-                <p>Uzun ömürlü ve sızdırmaz su tesisatı çözümleri sağlıyoruz.</p>
-                <a href="hizmetler/sutesisati/sutesisati.html" class="card-button">Detaylı Bilgi</a>
-            </div>
-            <div class="service-card">
-                <img src="images/11.jpg" alt="Karebodur, Fayans & Seramik Döşeme">
-                <h3>Karebodur, Fayans & Seramik Döşeme</h3>
-                <p>Banyo, mutfak ve zemin kaplamalarında uzman çözümler.</p>
-                <a href="hizmetler/karebodurfayansseramik/karebodurfayansseramik.html" class="card-button">Detaylı Bilgi</a>
-            </div>
-            <div class="service-card">
-                <img src="images/19.jpg" alt="Balkon & Teras Kapama">
-                <h3>Balkon & Teras Kapama</h3>
-                <p>Açık alanlarınızı dört mevsim kullanabileceğiniz şekilde dönüştürüyoruz.</p>
-                <a href="hizmetler/balkonteras/balkonteras.html" class="card-button">Detaylı Bilgi</a>
-            </div>
-            <div class="service-card">
-                <img src="images/2.jpg" alt="Cam Balkon Sistemleri">
-                <h3>Cam Balkon Sistemleri</h3>
-                <p>Şeffaf ve dayanıklı balkon kapatma çözümleri sunuyoruz.</p>
-                <a href="hizmetler/cambalkon/cambalkon.html" class="card-button">Detaylı Bilgi</a>
-            </div>
-            <div class="service-card">
-                <img src="images/6.jpg" alt="TV Ünitesi & Dekoratif Duvar Kaplamaları">
-                <h3>TV Ünitesi & Dekoratif Duvar Kaplamaları</h3>
-                <p>Modern ve estetik yaşam alanları oluşturuyoruz.</p>
-                <a href="hizmetler/tvdekorduvar/tvdekorduvar.html" class="card-button">Detaylı Bilgi</a>
-            </div>
-            <div class="service-card">
-                <img src="images/10.jpg" alt="Dış Cephe Kaplama & Boya İşleri">
-                <h3>Dış Cephe Kaplama & Boya İşleri</h3>
-                <p>Binalarınıza estetik ve koruma kazandırıyoruz.</p>
-                <a href="hizmetler/discephe/discephe.html" class="card-button">Detaylı Bilgi</a>
+            <div class="text-side">
+                <h3>Neden Alçıpan ve Asma Tavan?</h3>
+                <p><strong>Estetik ve Modern Görünüm:</strong> Düzgün yüzeyler, gizli aydınlatma entegrasyonu ve özel tasarım seçenekleriyle mekanınıza premium bir hava katıyoruz.</p>
+                <p><strong>İşlevsel Çözümler:</strong> Elektrik tesisatlarını gizleme, akustik düzenleme ve ısı yalıtımı gibi pratik avantajlar sunuyoruz.</p>
+                <p><strong>Dayanıklı ve Uzun Ömürlü:</strong> Kaliteli alçıpan malzemeleri ve profesyonel montaj ile yıllarca sorunsuz kullanım garantisi veriyoruz.</p>
+                <p><strong>Esnek Tasarım İmkanları:</strong> Düz, kademeli, oval, 3D desenli veya özel geometrili tavan tasarımlarıyla hayalinizdeki mekanı oluşturuyoruz.</p>
             </div>
         </div>
-    </section>
-    
-    <div class="section-divider"></div>
-    
-    <section id="statistics" class="statistics">
-        <div class="statistics-container">
-            <div class="stat-item">
-                <img src="https://cdn-icons-png.flaticon.com/128/3082/3082729.png" alt="Biten iş" width="50">
-                <h3>+99</h3>
-                <p>BİTEN İŞ</p>
+
+        <!-- Bölüm 3 - Hizmetler -->
+        <div class="content-section">
+            <div class="image-side">
+                <img src="photo2.jpg" alt="Hizmetlerimiz">
             </div>
-            <div class="stat-item">
-                <img src="https://cdn-icons-png.flaticon.com/128/747/747310.png" alt="Tecrübe" width="50">
-                <h3>+25</h3>
-                <p>YILLIK TECRÜBE</p>
-            </div>
-            <div class="stat-item">
-                <img src="https://cdn-icons-png.flaticon.com/128/15127/15127167.png" alt="Hizmet" width="50">
-                <h3>+60</h3>
-                <p>MİMARLIK HİZMETİ</p>
-            </div>
-            <div class="stat-item">
-                <img src="https://cdn-icons-png.flaticon.com/128/2252/2252184.png" alt="Müşteri" width="50">
-                <h3>+99</h3>
-                <p>MUTLU MÜŞTERİ</p>
+            <div class="text-side">
+                <h3>Hizmetlerimiz</h3>
+                <p><strong>Alçıpan Bölme Duvar Sistemleri:</strong> Ofis bölümleri, depo odaları, ses yalıtımlı alanlar</p>
+                <p><strong>Asma Tavan Uygulamaları:</strong> Düz, kademeli, ışıklı, akustik panelli</p>
+                <p><strong>3D Panel ve Özel Tasarım Tavanlar:</strong> Şık ve göz alıcı dekoratif çözümler</p>
+                <p><strong>Alçıpan Dolap ve Niş Tasarımları:</strong> Fonksiyonel ve estetik depolama alanları</p>
+                <p><strong>Tamirat ve Renovasyon Hizmetleri:</strong> Eski tavanların yenilenmesi, çatlak onarımları</p>
             </div>
         </div>
-    </section>
-    
-    <div class="section-divider"></div>
-    
-    <section id="about" class="about">
-        <div class="about-container">
-            <div class="about-images">
-                <div class="image-stack">
-                    <img src="siyah.jpg" alt="Siyah Fotoğraf">
-                    <img src="gri.jpg" alt="Gri Fotoğraf">
-                    <img src="mavi.jpg" alt="Mavi Fotoğraf">
+
+        <!-- Bölüm 4 - Çalışma Süreci -->
+        <div class="content-section">
+            <div class="image-side">
+                <img src="photo3.jpg" alt="Çalışma Sürecimiz">
+            </div>
+            <div class="text-side">
+                <h3>Nasıl Çalışıyoruz?</h3>
+                <p><strong>1. Ücretsiz Keşif ve Projelendirme:</strong> Mekanınıza geliyor, ihtiyaçlarınızı analiz ediyor ve size özel çözümler sunuyoruz.</p>
+                <p><strong>2. Tasarım ve Malzeme Seçimi:</strong> Renk, aydınlatma ve model tercihlerinize göre en uygun seçenekleri belirliyoruz.</p>
+                <p><strong>3. Profesyonel Uygulama:</strong> Deneyimli ustalarımızla hızlı, temiz ve titiz bir montaj süreci yönetiyoruz.</p>
+                <p><strong>4. Son Kontrol ve Teslim:</strong> Kusursuz bir sonuç için detayları kontrol edip mekanınızı size teslim ediyoruz.</p>
+            </div>
+        </div>
+
+        <!-- Bölüm 5 - Neden Biz -->
+        <div class="content-section">
+            <div class="image-side">
+                <img src="photo4.jpg" alt="Neden Biz">
+            </div>
+            <div class="text-side">
+                <h3>Neden Bizi Tercih Etmelisiniz?</h3>
+                <p><strong>20+ Yıllık Uzmanlık:</strong> Sektördeki tecrübemizle en zorlu projeleri bile sorunsuz tamamlıyoruz.</p>
+                <p><strong>Kaliteli Malzemeler:</strong> Yalnızca sertifikalı ve dayanıklı ürünler kullanıyoruz.</p>
+                <p><strong>Uygun Fiyat ve Garanti:</strong> En ekonomik çözümleri sunarken, işçilik garantisi veriyoruz.</p>
+                <p><strong>Zamanında Teslim:</strong> Projelerinizi belirlenen sürede tamamlıyor, zaman kaybını önlüyoruz.</p>
+                <div class="cta">
+                    <p><strong>Mekanınızı yeniden tanımlamak için şimdi iletişime geçin!</strong></p>
+                    <p>Profesyonel alçıpan ve asma tavan çözümleriyle hayalinizdeki mekanı birlikte tasarlayalım.</p>
                 </div>
             </div>
-            <div class="about-content">
-                <h2 class="section-title">Hakkımızda</h2>
-                <p class="about-description">
-                    Kalite, güven ve estetik değerlerimizi her zaman ön planda tutuyoruz. Siz de yaşam alanlarınızı yenilemek ve hayalinizdeki mekanlara kavuşmak için bizimle iletişime geçebilirsiniz.
-                </p>
-                <p class="about-description">
-                    Arslan Yapı olarak, yılların getirdiği deneyim ve uzmanlıkla müşterilerimize kaliteli, güvenilir ve estetik çözümler sunmayı ilke edindik. 
-                    Restorasyon, tadilat ve dekorasyon alanlarında yenilikçi yaklaşımlarımızla yaşam alanlarınızı modern, konforlu ve işlevsel hale getiriyoruz. 
-                    Her projede müşteri memnuniyetini ön planda tutarak, ihtiyaçlarınıza özel çözümler üretiyoruz. 
-                </p>
-            </div>
         </div>
-    </section>
+    </div>
     
     <div class="contact-buttons">
         <a href="https://wa.me/05352713431" target="_blank">
@@ -766,16 +851,16 @@
                 <a href="mailto:arslanyapidekor@gmail.com">
                     <img src="https://cdn-icons-png.flaticon.com/128/732/732200.png" alt="E-posta" width="30">
                 </a>
-                <a href="https://www.facebook.com/share/18VgJx7zky/?mibextid=wwXIfr" target="_blank">
+                <a href="https://facebook.com" target="_blank">
                     <img src="https://cdn-icons-png.flaticon.com/128/733/733547.png" alt="Facebook" width="30">
                 </a>
-                <a href="https://www.youtube.com/channel/UC81_1D64JRJlfkxhfCnkAOA" target="_blank">
+                <a href="https://youtube.com" target="_blank">
                     <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="YouTube" width="30">
                 </a>
-                <a href="https://www.tiktok.com/@arslanyapidekor?_t=ZS-8vYIXxurJw5&_r=1" target="_blank">
+                <a href="https://tiktok.com" target="_blank">
                     <img src="https://cdn-icons-png.flaticon.com/128/3046/3046121.png" alt="TikTok" width="30">
                 </a>
-                <a href="https://www.instagram.com/arslanrestorasyon?igsh=Y2lkZWNmZzBjbjBq" target="_blank">
+                <a href="https://instagram.com" target="_blank">
                     <img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="Instagram" width="30">
                 </a>
             </div>
